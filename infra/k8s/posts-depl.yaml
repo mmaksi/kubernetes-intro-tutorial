@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posts-deployment
+spec:
+  replicas: 1
+  # manage all pods created with label 'app: posts'
+  selector:
+    matchLabels:
+      app: posts
+  # configs applied to the pods
+  template:
+    metadata:
+      labels:
+        app: posts
+    # configs applied to the containers inside the pods
+    spec:
+      containers:
+        - name: posts-container-1
+          image: markmaksi/posts:latest
+          resources:
+            limits:
+              cpu: '0.5' # Adjust the CPU limit as needed
+              memory: '512Mi' # Adjust the memory limit as needed
+              
