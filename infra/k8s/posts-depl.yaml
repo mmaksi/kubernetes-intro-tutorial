@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: posts-container-1
-          image: markmaksi/posts:latest
+          image: markmaksi/test:latest
           resources:
             limits:
               cpu: '0.5' # Adjust the CPU limit as needed
